@@ -95,11 +95,13 @@
 							<tool id="de.innot.avreclipse.tool.compiler.winavr.app.release.845422037" name="AVR Compiler" superClass="de.innot.avreclipse.tool.compiler.winavr.app.release">
 								<option id="de.innot.avreclipse.compiler.option.debug.level.463501368" name="Generate Debugging Info" superClass="de.innot.avreclipse.compiler.option.debug.level" value="de.innot.avreclipse.compiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.optimize.2108932861" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.size" valueType="enumerated"/>
+								<option id="de.innot.avreclipse.compiler.option.optimize.other.2086973828" name="Other Optimization Flags" superClass="de.innot.avreclipse.compiler.option.optimize.other" value="-ffunction-sections -fdata-sections -Wl,--gc-sections --param inline-call-cost=2 -finline-limit=3 -fno-inline-small-functions" valueType="string"/>
 								<inputType id="de.innot.avreclipse.compiler.winavr.input.1702897624" name="C Source Files" superClass="de.innot.avreclipse.compiler.winavr.input"/>
 							</tool>
 							<tool id="de.innot.avreclipse.tool.cppcompiler.app.release.1217077430" name="AVR C++ Compiler" superClass="de.innot.avreclipse.tool.cppcompiler.app.release">
 								<option id="de.innot.avreclipse.cppcompiler.option.debug.level.56172987" name="Generate Debugging Info" superClass="de.innot.avreclipse.cppcompiler.option.debug.level" value="de.innot.avreclipse.cppcompiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.optimize.840439487" name="Optimization Level" superClass="de.innot.avreclipse.cppcompiler.option.optimize" value="de.innot.avreclipse.cppcompiler.optimize.size" valueType="enumerated"/>
+								<option id="de.innot.avreclipse.cppcompiler.option.optimize.other.839190640" name="Other Optimization Flags" superClass="de.innot.avreclipse.cppcompiler.option.optimize.other" value="-ffunction-sections -fdata-sections -Wl,--gc-sections --param inline-call-cost=2 -finline-limit=3 -fno-inline-small-functions" valueType="string"/>
 								<inputType id="de.innot.avreclipse.cppcompiler.input.339013421" superClass="de.innot.avreclipse.cppcompiler.input"/>
 							</tool>
 							<tool id="de.innot.avreclipse.tool.linker.winavr.app.release.2113856401" name="AVR C Linker" superClass="de.innot.avreclipse.tool.linker.winavr.app.release"/>
@@ -108,7 +110,7 @@
 									<listOptionValue builtIn="false" value="aes128"/>
 									<listOptionValue builtIn="false" value="ArduinoCores"/>
 								</option>
-								<option id="de.innot.avreclipse.cpplinker.option.libpath.1001858436" superClass="de.innot.avreclipse.cpplinker.option.libpath" valueType="stringList">
+								<option id="de.innot.avreclipse.cpplinker.option.libpath.1001858436" name="Libraries Path (-L)" superClass="de.innot.avreclipse.cpplinker.option.libpath" valueType="stringList">
 									<listOptionValue builtIn="false" value="/Users/XtremD/Documents/workspace/Test2"/>
 								</option>
 								<inputType id="de.innot.avreclipse.tool.cpplinker.input.1100708822" name="OBJ Files" superClass="de.innot.avreclipse.tool.cpplinker.input">
