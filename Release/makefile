@@ -9,6 +9,8 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir.mk
+-include XBeeNSS/subdir.mk
+-include NewSoftSerial/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)

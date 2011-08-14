@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 60
+dist
+Doxyfile
+deploy.sh
+dist.sh
+*.zip
+doxygen-docs.sh
+Debug
+
+END
