@@ -23,12 +23,29 @@ uint8_t xbeeReset = 7; //Pull low to reset the XBee (Usually after a command ses
 uint8_t payload[40]; //Payload buffer. Clean this promptly after using!!!!!
 uint8_t recievedPayload[40]; //Buffer for the recieved data. Clean promptly after using!
 
-//Key storage in two dimensions!
-uint8_t keys[10] [16] = {}; //Ten keys that are each 128bits long.
-//For testing purposes we will auto define a master preshared key.
-key[0][] = { 0x2b, 0x7e, 0x15, 0x16, 0x28, 0xae, 0xd2, 0xa6, 0xab,
-			0xf7, 0x15, 0x88, 0x09, 0xcf, 0x4f, 0x3c };
 
+//structuring the devices. A device object will have three things, a 64bit address,
+//encryption key, signing key and device type
+
+struct xbeeDevice_t {
+	  uint32_t lowByte;
+	  uint32_t highbyte;
+	  uint8_t encKey[16];
+	  uint8_t deviceType;
+	} xbeeDevices[3];
+
+
+	/*
+//Key storage in two dimensions!
+uint8_t keys[10] [16] = {0x2b, 0x7e, 0x15, 0x16, 0x28, 0xae, 0xd2, 0xa6, 0xab,
+		0xf7, 0x15, 0x88, 0x09, 0xcf, 0x4f, 0x3c}; //Ten keys that are each 128bits long.
+//For testing purposes we will auto define a master preshared key.
+
+uint16_t addresses[10] = {0x1000,0x5000,0x5001}
+
+uint8_t randomData[16] = { 0x32, 0x43, 0xf6, 0xa8, 0x88, 0x5a, 0x30, 0x8d, 0x31,
+			0x31, 0x98, 0xa2, 0xe0, 0x37, 0x07, 0x34 };
+*/
 String thingsToSay[3] = { //This should be in Progmem
 		"Hello world!", "I see you!", "Are you still there?" }; //little testing things.....
 
@@ -65,17 +82,16 @@ int main(void) {
 	init();
 	//Enter COPIED CODE!
 	Serial1.begin(9600);
-	xbee.setSerial(Serial1); //set the xbee to use Serialport 1
+	//xbee.setSerial(Serial1); //set the xbee to use Serialport 1
 	//xbee.begin(9600); //start communication with the xbee
 
 	randomSeed(analogRead(0)); //IN THE FUTURE USE THE TRUERANDOM LIBRARY!
-	delay(5000); //Wait for the XBee to initialize.
 
 	//***Start debugging serialprint***//
 #if DEBUG_MODE
 	Serial.begin(9600); //Start the debugging prompt.
 	Serial.println("Hello World! Setting up the Xbee modems to their corresponding addresses.");//USE PROGMEM!!!!
-
+	delay(5000); //Wait for the XBee to initialize.
 	//**Setup address logs if we are in debugmode**//
 
 	atRequest = AtCommandRequest(ATMY, myself8, sizeof(myself8));
@@ -83,38 +99,49 @@ int main(void) {
 
 	atRequest = AtCommandRequest(ATWR);
 	sendAtCommand();
+
+		Serial.println("Hello World!");
+		Serial.println("Starting handshake");
 #endif
 
-	Serial.println("Hello World!");
-	Serial.println("Starting handshake");
+	//Something inits the handshake
 
-	uint8_t data[16] = { 0x32, 0x43, 0xf6, 0xa8, 0x88, 0x5a, 0x30, 0x8d, 0x31,
-			0x31, 0x98, 0xa2, 0xe0, 0x37, 0x07, 0x34 };
+	//the master inits the connection with a broadcast challenge to all (listed) XBee devices
+
+	//The slave checks the sender address and responds with a random challenge using a preshared key (enc'ed and signed)
+
+	//The door decs the packet and checks the sig using the key to make sure everything is allright
+
+	//The door either hashes or XORs the dec'ed packet using its key before
+
 	//Random data function belongs here!
+
+/*
 	aes128_ctx_t ctx;
-	aes128_init(&key, &ctx);
+	aes128_init(keys, &ctx);
 	//cli_putstr_P(PSTR("\r\n\r\n cipher test (FIPS 197):\r\n key:        "));
 	//cli_hexdump(key, 16);
 	//cli_putstr_P(PSTR("\r\n plaintext:  "));
 	//cli_hexdump(data, 16);
 	for (int i = 0; i < 16; i++) { //PlainText
-		Serial.print(data[i], HEX);
+		Serial.print(randomData[i], HEX);
 	}
 	Serial.println();
-	aes128_enc(data, &ctx);
+	aes128_enc(randomData, &ctx);
 	//cli_putstr_P(PSTR("\r\n ciphertext: "));
 	//cli_hexdump(data, 16);
 	for (int i = 0; i < 16; i++) { //Ciphertext
-		Serial.print(data[i], HEX);
+		Serial.print(randomData[i], HEX);
 	}
 	Serial.println();
-	aes128_dec(data, &ctx);
+	aes128_dec(randomData, &ctx);
 	//cli_putstr_P(PSTR("\r\n plaintext:  "));
 	//cli_hexdump(data, 16);
 	for (int i = 0; i < 16; i++) { //Decoded ciphertext
-		Serial.print(data[i], HEX);
+		Serial.print(randomData[i], HEX);
 	}
 	Serial.println();
+	*/
 	Serial.print("Done Encrypting!");
 	for (;;) {
 		/****************************/
@@ -123,14 +150,15 @@ int main(void) {
 
 		delay(100); //Just do nothing!
 
+#if IS_THIS_A_DOOR
 		randoPayload(); //building payload
 		Serial.println("Building and sending packet!");
 		Tx16Request tx = Tx16Request(key1, payload, sizeof(payload)); //Build the txPacket
 		xbee.send(tx); //Fire ze missiles!
 		handleTXAftermath();
 
-		delay(10000);
-
+		delay(1000);
+#endif
 	} // end for
 
 	return 0;
