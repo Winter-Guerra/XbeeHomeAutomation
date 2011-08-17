@@ -9,8 +9,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir.mk
--include XBeeNSS/subdir.mk
--include NewSoftSerial/subdir.mk
+-include XBee/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -66,7 +65,7 @@ all: Test2.elf secondary-outputs
 Test2.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR C++ Linker'
-	avr-g++ -Wl,-Map,Test2.map,--cref -L/Users/XtremD/Documents/workspace/Test2 -mmcu=atmega328p -o "Test2.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	avr-g++ -Wl,-Map,Test2.map,--cref -L/Users/XtremD/Documents/workspace/Test2 -mmcu=atmega1280 -o "Test2.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -90,7 +89,7 @@ Test2.eep: Test2.elf
 
 sizedummy: Test2.elf
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega328p Test2.elf
+	-avr-size --format=avr --mcu=atmega1280 Test2.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 

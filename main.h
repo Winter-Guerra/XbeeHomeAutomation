@@ -8,16 +8,14 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
-//#include <stdlib.h>
-//#include <stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <avr/io.h>
 extern "C" {
-#include "aes/aes.h"
+#include "aes.h"
 } //This is a C lib not a CPP lib!
-//#include "aes/aes.h"
-#include "WProgram.h" //
-#include "NewSoftSerial.h"
+#include "WProgram.h" // Arduino!
 #include "XBee.h"
-
 
 extern "C" void __cxa_pure_virtual();
 
@@ -32,6 +30,8 @@ void cleanRXPacket();
 void randoPayload();
 
 void sendAtCommand();
+
+bool handleTXAftermath();
 
 
 

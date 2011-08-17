@@ -97,7 +97,8 @@
 								<option id="de.innot.avreclipse.compiler.option.optimize.2108932861" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.optimize.other.2086973828" name="Other Optimization Flags" superClass="de.innot.avreclipse.compiler.option.optimize.other" value="-ffunction-sections -fdata-sections -Wl,--gc-sections --param inline-call-cost=2 -finline-limit=3 -fno-inline-small-functions -ffunction-sections -fdata-sections" valueType="string"/>
 								<option id="de.innot.avreclipse.compiler.option.incpath.375468873" name="Include Paths (-I)" superClass="de.innot.avreclipse.compiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/XBeeNSS}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/XBee}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/aes}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/NewSoftSerial}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Arduino Cores}&quot;"/>
 								</option>
@@ -108,7 +109,8 @@
 								<option id="de.innot.avreclipse.cppcompiler.option.optimize.840439487" name="Optimization Level" superClass="de.innot.avreclipse.cppcompiler.option.optimize" value="de.innot.avreclipse.cppcompiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.optimize.other.839190640" name="Other Optimization Flags" superClass="de.innot.avreclipse.cppcompiler.option.optimize.other" value="-ffunction-sections -fdata-sections -Wl,--gc-sections --param inline-call-cost=2 -finline-limit=3 -fno-inline-small-functions -ffunction-sections -fdata-sections" valueType="string"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.incpath.1133526384" name="Include Paths (-I)" superClass="de.innot.avreclipse.cppcompiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/XBeeNSS}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/XBee}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/aes}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/NewSoftSerial}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Arduino Cores}&quot;"/>
 								</option>

@@ -1,7 +1,15 @@
-main.d main.o: ../main.cpp ../main.h ../aes/aes.h ../aes/aes_types.h \
-  ../aes/aes128_enc.h ../aes/aes_enc.h ../aes/aes192_enc.h \
-  ../aes/aes256_enc.h ../aes/aes128_dec.h ../aes/aes_dec.h \
-  ../aes/aes192_dec.h ../aes/aes256_dec.h ../aes/aes_keyschedule.h \
+main.d main.o: ../main.cpp ../main.h \
+  /Users/XtremD/Documents/workspace/Test2/aes/aes.h \
+  /Users/XtremD/Documents/workspace/Test2/aes/aes_types.h \
+  /Users/XtremD/Documents/workspace/Test2/aes/aes128_enc.h \
+  /Users/XtremD/Documents/workspace/Test2/aes/aes_enc.h \
+  /Users/XtremD/Documents/workspace/Test2/aes/aes192_enc.h \
+  /Users/XtremD/Documents/workspace/Test2/aes/aes256_enc.h \
+  /Users/XtremD/Documents/workspace/Test2/aes/aes128_dec.h \
+  /Users/XtremD/Documents/workspace/Test2/aes/aes_dec.h \
+  /Users/XtremD/Documents/workspace/Test2/aes/aes192_dec.h \
+  /Users/XtremD/Documents/workspace/Test2/aes/aes256_dec.h \
+  /Users/XtremD/Documents/workspace/Test2/aes/aes_keyschedule.h \
   /Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/WProgram.h \
   /Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/wiring.h \
   /Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/binary.h \
@@ -10,34 +18,31 @@ main.d main.o: ../main.cpp ../main.h ../aes/aes.h ../aes/aes_types.h \
   /Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/HardwareSerial.h \
   /Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/Stream.h \
   /Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/Print.h \
-  /Users/XtremD/Documents/workspace/Test2/NewSoftSerial/NewSoftSerial.h \
-  /Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/Print.h \
-  /Users/XtremD/Documents/workspace/Test2/XBeeNSS/XBee.h \
-  /Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/HardwareSerial.h
+  /Users/XtremD/Documents/workspace/Test2/XBee/XBee.h
 
 ../main.h:
 
-../aes/aes.h:
+/Users/XtremD/Documents/workspace/Test2/aes/aes.h:
 
-../aes/aes_types.h:
+/Users/XtremD/Documents/workspace/Test2/aes/aes_types.h:
 
-../aes/aes128_enc.h:
+/Users/XtremD/Documents/workspace/Test2/aes/aes128_enc.h:
 
-../aes/aes_enc.h:
+/Users/XtremD/Documents/workspace/Test2/aes/aes_enc.h:
 
-../aes/aes192_enc.h:
+/Users/XtremD/Documents/workspace/Test2/aes/aes192_enc.h:
 
-../aes/aes256_enc.h:
+/Users/XtremD/Documents/workspace/Test2/aes/aes256_enc.h:
 
-../aes/aes128_dec.h:
+/Users/XtremD/Documents/workspace/Test2/aes/aes128_dec.h:
 
-../aes/aes_dec.h:
+/Users/XtremD/Documents/workspace/Test2/aes/aes_dec.h:
 
-../aes/aes192_dec.h:
+/Users/XtremD/Documents/workspace/Test2/aes/aes192_dec.h:
 
-../aes/aes256_dec.h:
+/Users/XtremD/Documents/workspace/Test2/aes/aes256_dec.h:
 
-../aes/aes_keyschedule.h:
+/Users/XtremD/Documents/workspace/Test2/aes/aes_keyschedule.h:
 
 /Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/WProgram.h:
 
@@ -55,10 +60,4 @@ main.d main.o: ../main.cpp ../main.h ../aes/aes.h ../aes/aes_types.h \
 
 /Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/Print.h:
 
-/Users/XtremD/Documents/workspace/Test2/NewSoftSerial/NewSoftSerial.h:
-
-/Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/Print.h:
-
-/Users/XtremD/Documents/workspace/Test2/XBeeNSS/XBee.h:
-
-/Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/HardwareSerial.h:
+/Users/XtremD/Documents/workspace/Test2/XBee/XBee.h:
