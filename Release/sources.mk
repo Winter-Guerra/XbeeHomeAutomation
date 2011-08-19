@@ -31,6 +31,12 @@ SIZEDUMMY :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+xbee-arduino-read-only \
 . \
-XBee \
+XbeeLib/xbeeSendRseries2 \
+XbeeLib/xbeeSendRseries1 \
+XbeeLib/xbeeLibrary \
+XbeeLib/xbeeIOdataparser \
+XbeeLib/xbeeATseries2 \
+XbeeLib/xbeeATseries1 \
 

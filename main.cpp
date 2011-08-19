@@ -35,17 +35,6 @@ struct xbeeDevice_t {
 	} xbeeDevices[3];
 
 
-	/*
-//Key storage in two dimensions!
-uint8_t keys[10] [16] = {0x2b, 0x7e, 0x15, 0x16, 0x28, 0xae, 0xd2, 0xa6, 0xab,
-		0xf7, 0x15, 0x88, 0x09, 0xcf, 0x4f, 0x3c}; //Ten keys that are each 128bits long.
-//For testing purposes we will auto define a master preshared key.
-
-uint16_t addresses[10] = {0x1000,0x5000,0x5001}
-
-uint8_t randomData[16] = { 0x32, 0x43, 0xf6, 0xa8, 0x88, 0x5a, 0x30, 0x8d, 0x31,
-			0x31, 0x98, 0xa2, 0xe0, 0x37, 0x07, 0x34 };
-*/
 String thingsToSay[3] = { //This should be in Progmem
 		"Hello world!", "I see you!", "Are you still there?" }; //little testing things.....
 
@@ -66,7 +55,6 @@ uint16_t door1 = 0x1000, door2 = 0x1001;//This should probably be random and aut
 uint8_t myself8[] = { highByte(myself), lowByte(myself) }; //A array for autoconfiging the XBee address.
 
 //*****Reusable Instances!!******//
-//NewSoftSerial nss(xbeeRX, xbeeTX); //Instantiate a new NewSoftSerial instance for the XBee.
 XBee xbee = XBee(); //Instantiate a new xbee instance
 TxStatusResponse txStatus = TxStatusResponse();
 AtCommandRequest atRequest = AtCommandRequest(ATMY);
@@ -82,7 +70,7 @@ int main(void) {
 	init();
 	//Enter COPIED CODE!
 	Serial1.begin(9600);
-	//xbee.setSerial(Serial1); //set the xbee to use Serialport 1
+	xbee.setSerial(Serial1); //set the xbee to use Serialport 1
 	//xbee.begin(9600); //start communication with the xbee
 
 	randomSeed(analogRead(0)); //IN THE FUTURE USE THE TRUERANDOM LIBRARY!

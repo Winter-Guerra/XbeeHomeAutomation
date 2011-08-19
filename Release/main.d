@@ -18,7 +18,8 @@ main.d main.o: ../main.cpp ../main.h \
   /Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/HardwareSerial.h \
   /Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/Stream.h \
   /Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/Print.h \
-  /Users/XtremD/Documents/workspace/Test2/XBee/XBee.h
+  ../xbee-arduino-read-only/XBee.h \
+  /Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/HardwareSerial.h
 
 ../main.h:
 
@@ -60,4 +61,6 @@ main.d main.o: ../main.cpp ../main.h \
 
 /Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/Print.h:
 
-/Users/XtremD/Documents/workspace/Test2/XBee/XBee.h:
+../xbee-arduino-read-only/XBee.h:
+
+/Users/XtremD/Documents/workspace/Test2/Arduino\ Cores/HardwareSerial.h:

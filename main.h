@@ -15,12 +15,12 @@ extern "C" {
 #include "aes.h"
 } //This is a C lib not a CPP lib!
 #include "WProgram.h" // Arduino!
-#include "XBee.h"
+#include "xbee-arduino-read-only/XBee.h"
 
 extern "C" void __cxa_pure_virtual();
 
 //******Configuration stuff******// (This should be in a header in the future.)
-#define IS_THIS_A_DOOR 0
+#define IS_THIS_A_DOOR 1
 #define DEBUG_MODE 1
 
 void cleanPayload();

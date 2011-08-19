@@ -9,7 +9,13 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir.mk
--include XBee/subdir.mk
+-include xbee-arduino-read-only/subdir.mk
+-include XbeeLib/xbeeSendRseries2/subdir.mk
+-include XbeeLib/xbeeSendRseries1/subdir.mk
+-include XbeeLib/xbeeLibrary/subdir.mk
+-include XbeeLib/xbeeIOdataparser/subdir.mk
+-include XbeeLib/xbeeATseries2/subdir.mk
+-include XbeeLib/xbeeATseries1/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
